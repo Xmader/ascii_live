@@ -1,0 +1,13 @@
+{
+  "name": "ascii.live",
+  "description": "ASCII在线膜法视频流",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xmader/ascii.live"
+  },
+  "author": "xmader",
+  "scripts": {
+    "web-service": "python -m SimpleHTTPServer 3000"
+  },
+  "license": "MIT"
+}
