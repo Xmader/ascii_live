@@ -1,5 +1,6 @@
 {
   "name": "ascii_live",
+  "version": "0.1.0",
   "description": "ASCII在线视频流",
   "repository": {
     "type": "git",
