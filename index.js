@@ -1,8 +1,20 @@
-var i = 0
+var a = 1
 
-const main = () =>{
-    $("#pics").text(pics[i])
-    i++
+const pad = (num, n) => {
+    var i = (num + "").length;
+    while (i++ < n) num = "0" + num;
+    return num;
 }
 
-setInterval(main,100)
+const main = () => {
+    $.get(`pic/${pad(a, 3)}.txt`)
+        .done(
+            (txt) => {
+                $("#pics").text(txt)
+                a++
+            }
+        )
+        .fail(() => clearInterval(handle))
+}
+
+const handle = setInterval(main, 100)
