@@ -1,9 +1,9 @@
 {
-  "name": "ascii.live",
+  "name": "ascii_live",
   "description": "ASCII在线视频流",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Xmader/ascii.live"
+    "url": "https://github.com/Xmader/ascii_live"
   },
   "author": "xmader",
   "scripts": {
