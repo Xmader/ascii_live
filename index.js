@@ -6,6 +6,8 @@
  * 
  * Source Code: https://github.com/Xmader/ascii_live
  * 
+ * 部分代码参考了 https://gist.github.com/justjavac/6696499
+ * 
  * 为了更好的兼容性，不使用任何ES6特性和新增语法
  * 
  * 如果你在这里发现了bug，请多多包涵，欢迎使用 https://github.com/Xmader/ascii_live/issues 向我提出。
