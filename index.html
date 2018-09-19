@@ -10,7 +10,7 @@
     <title>ASCII在线视频流-自动转换视频到ASCII字符画</title>
     <style>
         video {
-            width: 100%;
+            width: 99.5%;
         }
 
         @media screen and (min-width: 767px) {
@@ -35,11 +35,11 @@
             display: none;
         }
 
-        .clear{
+        .clear {
             clear: both;
         }
 
-        .range_div{
+        .range_div {
             float: left;
         }
 
@@ -54,7 +54,8 @@
             }
         }
 
-        .upload-div input {
+        #upload-button,
+        #text-button {
             height: 27px;
             width: 101px;
         }
@@ -63,17 +64,29 @@
             margin-bottom: 3px;
         }
 
-        #upload-button{
+        #upload-button {
             position: absolute;
             cursor: pointer;
             opacity: 0;
+        }
+
+        .hidden {
+            position: absolute;
+            visibility: hidden;
+            width: 99%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .hidden {
+                width: 96%;
+            }
         }
 
     </style>
 </head>
 
 <body>
-    <video id="video1" controls preload="auto" src="nu_chi_1080p.mp4" poster="nu_chi_1080p_poster.jpg"></video>
+    <video id="video1" class="hidden" controls preload="auto" src="nu_chi_1080p.mp4" poster="nu_chi_1080p_poster.jpg"></video>
     <canvas id="cv"></canvas>
 
     <pre id="txt"></pre>
@@ -86,12 +99,16 @@
             (数值越小分辨率越高，占用的CPU百分比也就越高)
         </p>
         <p>
-            <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()" onchange="chang_font_size()" />
+            <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()"
+                onchange="chang_font_size()" />
             当前字号: <span id="font_size"></span>px(像素)
         </p>
     </div>
 
     <div class="upload-div">
+        <p>
+            <input id="show_video_btn" value="显示/隐藏原始视频" type="button" onclick="video.classList.toggle('hidden')">
+        </p>
         <p>
             想要换一个视频？
         </p>

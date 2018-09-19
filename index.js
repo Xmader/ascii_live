@@ -111,3 +111,7 @@ window.onload = function () {
 }
 
 uploadBtn.onchange = getFile
+
+txtDiv.onclick = function () {
+    video.paused ? video.play() : video.pause()
+}
