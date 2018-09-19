@@ -4,7 +4,7 @@ var ctx = cv.getContext('2d');
 var txtDiv = document.getElementById('txt');
 var uploadBtn = document.getElementById("upload-button");
 
-var font_size = 2 // ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高 (和占用的内存没有关系)，必须是2的倍数，单位: px (像素)
+var font_size = 2 // ASCII字符画的字号，数值越小分辨率越高，占用的CPU百分比也就越高 (和占用的内存没有关系)，必须是2的倍数，单位: px (像素)
 
 // 根据调整字号滑动条动态地改变ASCII字符画的字号
 function chang_font_size() {
@@ -82,7 +82,7 @@ function getFile(file) {
     var reader = new FileReader();
     reader.readAsDataURL(uploadBtn.files[0]);
 
-    video.src = ".mp4"
+    video.src = "converting.mp4"
     video.poster = null
 
     reader.onload = function () {
