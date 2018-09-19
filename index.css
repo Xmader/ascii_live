@@ -1,0 +1,70 @@
+video {
+    width: 99.5%;
+}
+
+@media screen and (min-width: 767px) {
+    body {
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+    video {
+        width: 50%;
+        float: left;
+        margin-right: 5px;
+    }
+}
+
+#txt {
+    font-family: "宋体", "simsun";
+}
+
+canvas {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.range_div {
+    float: left;
+}
+
+.upload-div {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 767px) {
+    .upload-div {
+        float: right;
+    }
+}
+
+#upload-button,
+#text-button {
+    height: 27px;
+    width: 101px;
+}
+
+.upload-div p {
+    margin-bottom: 3px;
+}
+
+#upload-button {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    width: 99%;
+}
+
+@media screen and (max-width: 767px) {
+    .hidden {
+        width: 96%;
+    }
+}

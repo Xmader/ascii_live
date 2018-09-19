@@ -6,7 +6,9 @@
  * 
  * Source Code: https://github.com/Xmader/ascii_live
  * 
- * 为了更好的兼容性，不使用任何ES6特性
+ * 为了更好的兼容性，不使用任何ES6特性和新增语法
+ * 
+ * 如果你在这里发现了bug，请多多包涵，欢迎使用 https://github.com/Xmader/ascii_live/issues 向我提出。
  * 
 */
 
@@ -92,7 +94,7 @@ function convert() {
 }
 
 // 获取上传的视频文件
-function getFile(file) {
+function getFile() {
     var reader = new FileReader();
     reader.readAsDataURL(uploadBtn.files[0]);
 
