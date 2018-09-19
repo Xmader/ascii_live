@@ -86,7 +86,7 @@
             (数值越小分辨率越高，占用的CPU百分比也就越高)
         </p>
         <p>
-            <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()" />
+            <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()" onchange="chang_font_size()" />
             当前字号: <span id="font_size"></span>px(像素)
         </p>
     </div>
@@ -95,7 +95,7 @@
         <p>
             想要换一个视频？
         </p>
-        <input name="file" id="upload-button" accept="video/*" title="未选择视频" type="file">
+        <input name="file" id="upload-button" accept="video/mp4,video/webm,video/ogg" title="" type="file">
         <input id="text-button" value="点我选择视频" type="button">
     </div>
 

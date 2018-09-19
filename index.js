@@ -105,13 +105,9 @@ function getFile(file) {
     }
 }
 
-video.addEventListener('play', function () {
-    window.setInterval(convert, 20);
-}, false);
-
 window.onload = function () {
     chang_font_size()
-    convert()
+    window.setInterval(convert, 20);
 }
 
 uploadBtn.onchange = getFile

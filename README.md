@@ -1,5 +1,7 @@
 # 🐸ASCII在线视频流
 
+> 自动转换视频到ASCII字符画
+
 ![](demo.gif)
 
 只是一个小demo
