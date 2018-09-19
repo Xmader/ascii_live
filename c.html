@@ -38,24 +38,65 @@
         .clear{
             clear: both;
         }
+
+        .range_div{
+            float: left;
+        }
+
+        .upload-div {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: 767px) {
+            .upload-div {
+                float: right;
+            }
+        }
+
+        .upload-div input {
+            height: 27px;
+            width: 101px;
+        }
+
+        .upload-div p {
+            margin-bottom: 3px;
+        }
+
+        #upload-button{
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+        }
+
     </style>
 </head>
 
 <body>
-    <video id="video1" controls preload="auto" src="nu_chi_1080p.mp4"></video>
+    <video id="video1" controls preload="auto" src="nu_chi_1080p.mp4" poster="nu_chi_1080p_poster.jpg"></video>
     <canvas id="cv"></canvas>
+
     <pre id="txt"></pre>
     <div class="clear"></div>
+
     <div class="range_div">
-        <p>
+        <p style="margin-left: 10px;">
             调整ASCII字符画的字号:
             <br>
             (数值越小分辨率越高，占用的CPU也就越高)
         </p>
         <p>
             <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()" />
-            当前字号:<span id="font_size"></span>px (像素)
+            当前字号: <span id="font_size"></span>px(像素)
         </p>
+    </div>
+
+    <div class="upload-div">
+        <p>
+            想要换一个视频？
+        </p>
+        <input name="file" id="upload-button" accept="video/*" title="未选择视频" type="file">
+        <input id="text-button" value="点我选择视频" type="button">
     </div>
 
     <script src="c.js"></script>

@@ -2,6 +2,7 @@ var video = document.getElementById("video1");
 var cv = document.getElementById('cv');
 var ctx = cv.getContext('2d');
 var txtDiv = document.getElementById('txt');
+var uploadBtn = document.getElementById("upload-button");
 
 var font_size = 2 // ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高 (和占用的内存没有关系)，必须是2的倍数，单位: px (像素)
 
@@ -76,12 +77,17 @@ function convert() {
     txtDiv.innerHTML = html;
 }
 
-// 获取图片
-function getImg(file) {
+// 获取上传的视频文件
+function getFile(file) {
     var reader = new FileReader();
-    reader.readAsDataURL(fileBtn.files[0]);
+    reader.readAsDataURL(uploadBtn.files[0]);
+
+    video.src = ".mp4"
+    video.poster = null
+
     reader.onload = function () {
-        img.src = reader.result;
+        video.src = reader.result; // 是一个base64 Data URL字符串
+        video.play()
     }
 }
 
@@ -93,3 +99,5 @@ window.onload = function () {
     chang_font_size()
     convert()
 }
+
+uploadBtn.onchange = getFile
