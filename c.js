@@ -25,7 +25,7 @@ function toText(g) {
     } else if (g > 210 && g <= 240) {
         return ';';
     }  else {
-        return '&nbsp;';
+        return '&ensp;'; // 此处不能用&nbsp;，因为正常的空格在等宽字体中和其它字符不等宽，要用en空格代替
     }
 }
 
