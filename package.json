@@ -1,6 +1,6 @@
 {
   "name": "ascii_live",
-  "version": "0.2",
+  "version": "0.3.0",
   "description": "ASCII在线视频流",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "author": "xmader",
   "scripts": {
-    "web-service": "python -m SimpleHTTPServer 3000"
+    "web-service": "python -m SimpleHTTPServer 3010"
   },
   "license": "MIT"
 }

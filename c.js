@@ -52,9 +52,9 @@ function init() {
     var imgDataWidth = imgData.width;
     var imgDataHeight = imgData.height;
     var html = '';
-    for (h = 0; h < imgDataHeight; h += 12) {
+    for (h = 0; h < imgDataHeight; h += 6) {
         var p = '';
-        for (w = 0; w < imgDataWidth; w += 6) {
+        for (w = 0; w < imgDataWidth; w += 3) {
             var index = (w + imgDataWidth * h) * 4;
             var r = imgDataArr[index + 0];
             var g = imgDataArr[index + 1];
