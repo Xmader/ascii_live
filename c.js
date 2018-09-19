@@ -3,8 +3,9 @@ var cv = document.getElementById('cv');
 var ctx = cv.getContext('2d');
 var txtDiv = document.getElementById('txt');
 
-var font_size // ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高 (和占用的内存没有关系)，必须是2的倍数，单位: px (像素)
+var font_size = 2 // ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高 (和占用的内存没有关系)，必须是2的倍数，单位: px (像素)
 
+// 根据调整字号滑动条动态地改变ASCII字符画的字号
 function chang_font_size() {
     var txt_style = document.getElementById("txt").style
 
@@ -88,4 +89,7 @@ video.addEventListener('play', function () {
     window.setInterval(convert, 20);
 }, false);
 
-chang_font_size()
+window.onload = function () {
+    chang_font_size()
+    convert()
+}

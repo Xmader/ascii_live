@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="icon.png">
+    <link rel="shortcut icon" href="icon.png">
+    <title>ASCII在线视频流-自动转换视频到ASCII字符画</title>
     <style>
         video {
             width: 100%;
@@ -39,14 +42,20 @@
 </head>
 
 <body>
-    <video id="video1" controls autoplay src="nu_chi_1080p.mp4"></video>
+    <video id="video1" controls preload="auto" src="nu_chi_1080p.mp4"></video>
     <canvas id="cv"></canvas>
     <pre id="txt"></pre>
     <div class="clear"></div>
     <div class="range_div">
-        调整ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高
-        <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()" />
-        当前字号:<span id="font_size"></span>px (像素)
+        <p>
+            调整ASCII字符画的字号:
+            <br>
+            (数值越小分辨率越高，占用的CPU也就越高)
+        </p>
+        <p>
+            <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()" />
+            当前字号:<span id="font_size"></span>px (像素)
+        </p>
     </div>
 
     <script src="c.js"></script>
