@@ -7,10 +7,20 @@ video.addEventListener('play', function () {
     window.setInterval(init, 20);
 }, false);
 
-var font_size = 2 // 设置ASCII字符画的字号，数值越小分辨率越高，占用的CPU和内存也就越高，必须是2的倍数，单位: px (像素)
+var font_size = 2 // 设置ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高，必须是2的倍数，单位: px (像素)
+// 和占用的内存没有关系
 
-var txt_style = document.getElementById("txt").style
-txt_style["font-size"] = txt_style["line-height"] = font_size + "px" // 设置ASCII字符画显示区域的CSS的字号和行高为设置的数值
+function chang_font_size() {
+    var txt_style = document.getElementById("txt").style
+
+    var n = +document.getElementById("font_size_range").value
+
+    txt_style["font-size"] = txt_style["line-height"] = n + "px" // 设置ASCII字符画显示区域的CSS的字号和行高为设置的数值
+    font_size = n
+    document.getElementById("font_size").innerText = n
+}
+
+chang_font_size()
 
 // 根据灰度生成相应字符
 function toText(g) {

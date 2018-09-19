@@ -10,7 +10,7 @@
             width: 100%;
         }
 
-        @media screen and (min-width: calc(768px - 1px)) {
+        @media screen and (min-width: 767px) {
             body {
                 margin-left: 5px;
                 margin-right: 10px;
@@ -31,6 +31,10 @@
         canvas {
             display: none;
         }
+
+        .clear{
+            clear: both;
+        }
     </style>
 </head>
 
@@ -38,6 +42,12 @@
     <video id="video1" controls autoplay src="nu_chi_1080p.mp4"></video>
     <canvas id="cv"></canvas>
     <pre id="txt"></pre>
+    <div class="clear"></div>
+    <div class="range_div">
+        调整ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高
+        <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()" />
+        当前字号:<span id="font_size"></span>px (像素)
+    </div>
 
     <script src="c.js"></script>
 </body>
