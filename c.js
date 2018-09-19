@@ -3,24 +3,18 @@ var cv = document.getElementById('cv');
 var ctx = cv.getContext('2d');
 var txtDiv = document.getElementById('txt');
 
-video.addEventListener('play', function () {
-    window.setInterval(init, 20);
-}, false);
-
-var font_size = 2 // 设置ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高，必须是2的倍数，单位: px (像素)
-// 和占用的内存没有关系
+var font_size // ASCII字符画的字号，数值越小分辨率越高，占用的CPU也就越高 (和占用的内存没有关系)，必须是2的倍数，单位: px (像素)
 
 function chang_font_size() {
     var txt_style = document.getElementById("txt").style
 
     var n = +document.getElementById("font_size_range").value
-
-    txt_style["font-size"] = txt_style["line-height"] = n + "px" // 设置ASCII字符画显示区域的CSS的字号和行高为设置的数值
-    font_size = n
     document.getElementById("font_size").innerText = n
-}
 
-chang_font_size()
+    txt_style["font-size"] = txt_style["line-height"] = n + "px" // 设置ASCII字符画显示区域的字号和行高为设置的数值
+
+    font_size = n
+}
 
 // 根据灰度生成相应字符
 function toText(g) {
@@ -43,14 +37,13 @@ function toText(g) {
     }
 }
 
-
 // 根据rgb值计算灰度
 function getGray(r, g, b) {
     return 0.299 * r + 0.578 * g + 0.114 * b;
 }
 
 // 转换
-function init() {
+function convert() {
     var video_width = video.clientWidth
     var video_height = video.clientHeight
 
@@ -90,3 +83,9 @@ function getImg(file) {
         img.src = reader.result;
     }
 }
+
+video.addEventListener('play', function () {
+    window.setInterval(convert, 20);
+}, false);
+
+chang_font_size()
