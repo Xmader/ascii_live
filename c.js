@@ -7,6 +7,10 @@ video.addEventListener('play', function () {
     window.setInterval(init, 20);
 }, false);
 
+var font_size = 2 // 设置ASCII字符画的字号，数值越小分辨率越高，占用的CPU和内存也就越高，必须是2的倍数，单位: px (像素)
+
+var txt_style = document.getElementById("txt").style
+txt_style["font-size"] = txt_style["line-height"] = font_size + "px" // 设置ASCII字符画显示区域的CSS的字号和行高为设置的数值
 
 // 根据灰度生成相应字符
 function toText(g) {
@@ -16,7 +20,7 @@ function toText(g) {
         return '&';
     } else if (g > 60 && g <= 120) {
         return '$';
-    }  else if (g > 120 && g <= 150) {
+    } else if (g > 120 && g <= 150) {
         return '*';
     } else if (g > 150 && g <= 180) {
         return 'o';
@@ -24,7 +28,7 @@ function toText(g) {
         return '!';
     } else if (g > 210 && g <= 240) {
         return ';';
-    }  else {
+    } else {
         return '&ensp;'; // 此处不能用&nbsp;，因为正常的空格在等宽字体中和其它字符不等宽，要用en空格代替
     }
 }
@@ -52,9 +56,9 @@ function init() {
     var imgDataWidth = imgData.width;
     var imgDataHeight = imgData.height;
     var html = '';
-    for (h = 0; h < imgDataHeight; h += 6) {
+    for (h = 0; h < imgDataHeight; h += font_size) {
         var p = '';
-        for (w = 0; w < imgDataWidth; w += 3) {
+        for (w = 0; w < imgDataWidth; w += (font_size / 2)) {
             var index = (w + imgDataWidth * h) * 4;
             var r = imgDataArr[index + 0];
             var g = imgDataArr[index + 1];
