@@ -7,14 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <style>
         video {
-            width: 50%;
-            float: left;
+            width: 100%;
         }
 
-        @media screen and (max-width: calc(768px - 1px)) {
+        @media screen and (min-width: calc(768px - 1px)) {
+            body {
+                margin-left: 5px;
+                margin-right: 10px;
+            }
+
             video {
-                width: 100%;
-                float: none;
+                width: 50%;
+                float: left;
+                margin-right: 5px;
             }
         }
 
