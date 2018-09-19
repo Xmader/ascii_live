@@ -10,6 +10,8 @@
 
 [演示地址：https://xmader.github.io/ascii_live/](https://xmader.github.io/ascii_live/)
 
+> 在手机上暂时不可用, 请等待下一个版本。
+
 * 点一下字符画就能像视频一样播放/暂停
 
 * 字符画可以像正常的文本一样复制/粘贴 <!-- 使用 CTRL-A 进行全选后复制 -->
