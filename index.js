@@ -32,13 +32,17 @@ var video_show = false
 var font_size = 2 // ASCII字符画的字号，数值越小分辨率越高，占用的CPU百分比也就越高 (和占用的内存没有关系)，必须是2的倍数，单位: px (像素)
 
 // 根据调整字号滑动条动态地改变ASCII字符画的字号
-function chang_font_size() {
+function change_font_size() {
     var n = +font_size_range.value // 获取的原始值是一个字符串，用"+"号将它转换成一个数字
     font_size_span.innerText = n
 
     txtDiv.style["transform"] = "scale(" + (n * scale_x) + "," + (n / 10) + ")" // 在Firefox上想要正常显示宽度要略小一些，原因不明
 
     font_size = n
+
+    convert() // 实时重绘，不需要等待额外的20毫秒
+
+    font_size_range.scrollIntoView() // 调整字号结束后页面自动回到滑动条所在的位置
 }
 
 // 根据灰度生成相应字符
@@ -132,7 +136,7 @@ function toggle_video() {
 }
 
 window.onload = function () {
-    chang_font_size()
+    change_font_size()
     window.setInterval(convert, 20);
 }
 
