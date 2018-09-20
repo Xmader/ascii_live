@@ -1,4 +1,4 @@
-@import url("http://fonts.font.im/css?family=Roboto+Mono:300");
+@import url("https://fonts.loli.net/css?family=Roboto+Mono:300");
 video {
     width: 99.5%;
 }
@@ -19,7 +19,7 @@ video {
 }
 
 #txt {
-    font-family: 'Roboto Mono';
+    font-family: "宋体", "simsun", 'Roboto Mono';
     font-size: 10px;
     line-height: 10px;
     width: 0px;

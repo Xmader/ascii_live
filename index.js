@@ -25,7 +25,14 @@ var font_size_span = document.getElementById("font_size")
 var footer = document.getElementById("footer")
 
 var isFirefox = navigator.userAgent.indexOf("Firefox") > -1
-var scale_x = 0.0835 // 1 / 10 - 1 / 100 - 6.5 / 1000
+var isWindows = navigator.userAgent.indexOf("Windows") > -1
+
+if (isWindows) { // 中易宋体只在Windows系统中可用
+    var scale_x = isFirefox ? 0.0895 : 0.1
+}
+else {
+    var scale_x = 0.0835
+}
 
 var video_show = false
 
