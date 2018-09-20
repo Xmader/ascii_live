@@ -1,7 +1,7 @@
 {
   "name": "ascii_live",
-  "version": "1.1.2",
-  "description": "ASCII在线视频流",
+  "version": "1.2.0",
+  "description": "ASCII字符画视频流",
   "repository": {
     "type": "git",
     "url": "https://github.com/Xmader/ascii_live"

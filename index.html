@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="icon.png">
     <link rel="shortcut icon" href="icon.png">
-    <title>ASCII在线视频流 - 自动实时转换视频到ASCII字符画视频</title>
+    <title>ASCII字符画视频流 - 自动实时转换视频到ASCII字符画视频</title>
     <link href="index.css" rel="stylesheet">
 </head>
 
@@ -18,32 +18,34 @@
     <pre id="txt"></pre>
     <div class="clear"></div>
 
-    <div class="range_div">
-        <p style="margin-left: 10px;">
-            点击ASCII字符画可播放/暂停视频
-        </p>
-        <p style="margin-left: 10px;">
-            调整ASCII字符画的字号:
-            <br>
-            (字号越小分辨率越高，占用的CPU百分比也就越高)
-        </p>
-        <p>
-            <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()"
-                onchange="chang_font_size()" />
-            当前字号: <span id="font_size"></span>px(像素)
-        </p>
-    </div>
+    <footer id="footer">
+        <div class="range_div">
+            <p style="margin-left: 10px;">
+                点击ASCII字符画可播放/暂停视频
+            </p>
+            <p style="margin-left: 10px;">
+                调整ASCII字符画的字号:
+                <br>
+                (字号越小分辨率越高，占用的CPU百分比也就越高)
+            </p>
+            <p>
+                <input id="font_size_range" type="range" min="2" max="8" value="2" step="2" oninput="chang_font_size()"
+                    onchange="chang_font_size()" />
+                当前字号: <span id="font_size"></span>px(像素)
+            </p>
+        </div>
 
-    <div class="upload-div">
-        <p>
-            <input id="show_video_btn" value="显示/隐藏原始视频" type="button" onclick="video.classList.toggle('hidden')">
-        </p>
-        <p>
-            想要换一个视频？
-        </p>
-        <input name="file" id="upload-button" accept="video/mp4,video/webm,video/ogg" title="" type="file">
-        <input id="text-button" value="点我选择视频" type="button">
-    </div>
+        <div class="upload-div">
+            <p>
+                <input id="show_video_btn" value="显示/隐藏原始视频" type="button" onclick="toggle_video()">
+            </p>
+            <p>
+                想要换一个视频？
+            </p>
+            <input name="file" id="upload-button" accept="video/mp4,video/webm,video/ogg" title="" type="file">
+            <input id="text-button" value="点我选择视频" type="button">
+        </div>
+    </footer>
 
     <script src="index.js"></script>
 </body>

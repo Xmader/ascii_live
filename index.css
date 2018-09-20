@@ -16,6 +16,14 @@ video {
 
 #txt {
     font-family: "宋体", "simsun";
+    font-size: 10px;
+    line-height: 10px;
+    width: 0px;
+    transform-origin: top left;
+    position: absolute;
+    left: -5px;
+    right: 0px;
+    top:0px
 }
 
 canvas {
