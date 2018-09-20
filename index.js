@@ -89,7 +89,13 @@ function convert() {
         : (txtDiv_height * (font_size / 10)) + 'px'
 
     if (document.body.clientWidth < 767) { // 小屏幕设备
-        footer.style["margin-top"] = "-" + txtDiv_height * (1 - font_size / 10) + "px"
+        var footer_margin_top = -txtDiv_height * (1 - font_size / 10)
+
+        if (footer_margin_top > 0) {
+            footer_margin_top = (font_size - 10) * 12
+        }
+
+        footer.style["margin-top"] = footer_margin_top + "px"
     }
 
     ctx.drawImage(video, 0, 0, video_width, video_height)
