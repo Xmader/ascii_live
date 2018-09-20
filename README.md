@@ -1,4 +1,4 @@
-# 🐸ASCII在线视频流
+# 🐸ASCII字符画视频流
 
 > 自动实时转换视频到ASCII字符画视频
 
@@ -10,7 +10,7 @@
 
 [演示地址：https://xmader.github.io/ascii_live/](https://xmader.github.io/ascii_live/)
 
-> 在手机上暂时不可用, 请等待下一个版本。
+> 在Android手机和Chrome浏览器上暂时不可用 (因为有最小字号限制), 请使用其它浏览器或等待下一个版本。
 
 * 点一下字符画就能像视频一样播放/暂停
 
