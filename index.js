@@ -24,7 +24,10 @@ var font_size_range = document.getElementById("font_size_range")
 var font_size_span = document.getElementById("font_size")
 var footer = document.getElementById("footer")
 
-var show_raw_video = false
+var isFirefox = navigator.userAgent.indexOf("Firefox") > -1
+var scale_x = isFirefox ? 0.0895 /* 1 / 10 - 1 / 100 - 1 / 2000 */ : 0.1
+
+var video_show = false
 
 var font_size = 2 // ASCII字符画的字号，数值越小分辨率越高，占用的CPU百分比也就越高 (和占用的内存没有关系)，必须是2的倍数，单位: px (像素)
 
@@ -33,7 +36,7 @@ function chang_font_size() {
     var n = +font_size_range.value // 获取的原始值是一个字符串，用"+"号将它转换成一个数字
     font_size_span.innerText = n
 
-    txtDiv.style["transform"] = "scale(" + (n / 10) + "," + (n / 10) + ")"
+    txtDiv.style["transform"] = "scale(" + (n * scale_x) + "," + (n / 10) + ")" // 在Firefox上想要正常显示宽度要略小一些，原因不明
 
     font_size = n
 }
@@ -55,7 +58,7 @@ function toText(g) {
     } else if (g > 210 && g <= 240) {
         return ';';
     } else {
-        return '.'; // 此处不能用&nbsp;，因为正常的空格在等宽字体中和其它字符不等宽，要用en空格代替
+        return isFirefox ? '.' : "&ensp;"; // 此处不能用&nbsp;，因为正常的空格在等宽字体中和其它字符不等宽，要用en空格代替。在Firefox上en空格的宽度不正常，原因不明
     }
 }
 
@@ -68,12 +71,22 @@ function getGray(r, g, b) {
 function convert() {
     var video_width = video.clientWidth
     var video_height = video.clientHeight
+    var txtDiv_height = txtDiv.clientHeight
 
     cv.width = video_width
     cv.height = video_height
 
-    txtDiv.style.left = show_raw_video ? video_width + 10 + 'px' : "5px"
-    footer.style["margin-top"] = show_raw_video ? "0px" : (txtDiv.clientHeight * (font_size / 10)) + 'px'
+    txtDiv.style.left = video_show ?
+        video_width + 10 + 'px'
+        : "5px"
+
+    footer.style["margin-top"] = video_show ?
+        "0px"
+        : (txtDiv_height * (font_size / 10)) + 'px'
+
+    if (document.body.clientWidth < 767) { // 小屏幕设备
+        footer.style["margin-top"] = "-" + txtDiv_height * (1 - font_size / 10) + "px"
+    }
 
     ctx.drawImage(video, 0, 0, video_width, video_height)
 
@@ -115,7 +128,7 @@ function getFile() {
 // 显示/隐藏原始视频
 function toggle_video() {
     video.classList.toggle('hidden')
-    show_raw_video = !show_raw_video
+    video_show = !video_show
 }
 
 window.onload = function () {

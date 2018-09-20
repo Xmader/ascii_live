@@ -12,6 +12,9 @@ video {
         float: left;
         margin-right: 5px;
     }
+    #txt {
+        position: absolute;
+    }
 }
 
 #txt {
@@ -20,10 +23,9 @@ video {
     line-height: 10px;
     width: 0px;
     transform-origin: top left;
-    position: absolute;
     left: -5px;
     right: 0px;
-    top:0px
+    top: 0px;
 }
 
 canvas {
@@ -69,6 +71,7 @@ canvas {
     position: absolute;
     visibility: hidden;
     width: 99%;
+    top:0;
 }
 
 @media screen and (max-width: 767px) {
