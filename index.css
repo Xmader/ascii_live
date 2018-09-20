@@ -1,3 +1,4 @@
+@import url("http://fonts.font.im/css?family=Roboto+Mono:300");
 video {
     width: 99.5%;
 }
@@ -18,7 +19,7 @@ video {
 }
 
 #txt {
-    font-family: "宋体", "simsun";
+    font-family: 'Roboto Mono';
     font-size: 10px;
     line-height: 10px;
     width: 0px;
@@ -71,7 +72,7 @@ canvas {
     position: absolute;
     visibility: hidden;
     width: 99%;
-    top:0;
+    top: 0;
 }
 
 @media screen and (max-width: 767px) {

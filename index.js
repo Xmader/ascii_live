@@ -25,7 +25,7 @@ var font_size_span = document.getElementById("font_size")
 var footer = document.getElementById("footer")
 
 var isFirefox = navigator.userAgent.indexOf("Firefox") > -1
-var scale_x = isFirefox ? 0.0895 /* 1 / 10 - 1 / 100 - 1 / 2000 */ : 0.1
+var scale_x = 0.0835 // 1 / 10 - 1 / 100 - 6.5 / 1000
 
 var video_show = false
 
@@ -36,7 +36,7 @@ function change_font_size() {
     var n = +font_size_range.value // 获取的原始值是一个字符串，用"+"号将它转换成一个数字
     font_size_span.innerText = n
 
-    txtDiv.style["transform"] = "scale(" + (n * scale_x) + "," + (n / 10) + ")" // 在Firefox上想要正常显示宽度要略小一些，原因不明
+    txtDiv.style["transform"] = "scale(" + (n * scale_x) + "," + (n / 10) + ")"
 
     font_size = n
 
@@ -89,7 +89,7 @@ function convert() {
         : (txtDiv_height * (font_size / 10)) + 'px'
 
     if (document.body.clientWidth < 767) { // 小屏幕设备
-        var footer_margin_top = -txtDiv_height * (1 - font_size / 10)
+        var footer_margin_top = -txtDiv_height * (1 - font_size / 10) // (1 - font_size / 10) 可能会是负数
 
         if (footer_margin_top > 0) {
             footer_margin_top = (font_size - 10) * 12
