@@ -126,6 +126,10 @@ function convert() {
         html += p;
     }
     txtDiv.innerHTML = html;
+
+    console.clear()
+    console.log(html)
+
 }
 
 // 获取上传的视频文件

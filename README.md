@@ -23,6 +23,8 @@
 
 * 全屏观看效果更佳
 
+* **v1.3.0新增** 打开控制台也能看到ASCII字符画视频 (目前只在字号为16px时可用) (仅在Firefox中测试通过) <!-- 同时输出到控制台 -->
+
 ## 这是如何实现的？
 
 使用了canvas作为过渡，具体实现可以查看[源码](https://github.com/Xmader/ascii_live/blob/master/index.js)。
