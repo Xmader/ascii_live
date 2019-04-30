@@ -127,8 +127,10 @@ function convert() {
     }
     txtDiv.innerHTML = html;
 
-    console.clear()
-    console.log(html)
+    if (font_size >= 16) {
+        console.clear()
+        console.log(html)
+    }
 
 }
 
