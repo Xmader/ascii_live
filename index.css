@@ -19,7 +19,7 @@ video {
 }
 
 #txt {
-    font-family: "宋体", "simsun", 'Roboto Mono';
+    font-family: "Roboto Mono", "宋体", "simsun", monospace;
     font-size: 10px;
     line-height: 10px;
     width: 0px;
